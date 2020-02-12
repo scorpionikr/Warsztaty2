@@ -9,3 +9,14 @@
 .slider .visible{
     display: inline-block;
 }
+
+.slider {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    padding-top: 100px;
+}
+button {
+    display: inline-block;
+}
