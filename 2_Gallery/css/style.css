@@ -7,8 +7,16 @@
 }
 
 .gallery li img {
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
+    cursor: pointer;
+    z-index: 0;
+}
+.gallery li img:hover {
+    width: 155px;
+    height: 155px;
+    z-index: 1;
+    background:rgba(255,255,255,0.7);
 }
 
 .fullScreen {
@@ -19,15 +27,53 @@
     top: 0;
     z-index: 1;
     background:rgba(255,255,255,0.7);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /*flex-direction: column;*/
 }
-.fullScreen .close {
+.fullScreen .prev, .fullScreen .next {
     display: block;
-    margin: auto;
+    /*margin: auto;*/
+}
+
+.fullScreen .close {
+    /*position: absolute;*/
+    display: block;
 }
 
 .fullScreen img {
+    /*position: relative;*/
     display: block;
-    margin: 15px auto 5px;
+    margin: 5px auto 5px;
     width: auto;
-    height: calc(100% - 50px);
+    height: calc(100% - 40px);
+}
+
+.fa-arrow-circle-right {
+    content: "\f0a9";
+    display: block;
+    font-weight: bold;
+    font-family: "Font Awesome 5 Free";
+    font-size: 50px;
+    color: lightgrey;
+    cursor: pointer;
+}
+
+.fa-arrow-circle-right:hover {
+    color: grey;
+}
+
+.fa-arrow-circle-left {
+    content: "\f0a8";
+    display: block;
+    font-weight: bold;
+    font-family: "Font Awesome 5 Free";
+    font-size: 50px;
+    color: lightgrey;
+    cursor: pointer;
+}
+
+.fa-arrow-circle-left:hover {
+    color: grey;
 }

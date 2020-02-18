@@ -1,0 +1,8 @@
+#taskList li button, #taskList li p {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.complete {
+    color: red;
+}
