@@ -17,13 +17,21 @@ document.addEventListener("DOMContentLoaded", function(){
             let buttonp = elem.querySelector(".fa-arrow-circle-left")
             let buttonn = elem.querySelector(".fa-arrow-circle-right")
             let buttonc = elem.querySelector(".close")
-            let pic = elem.querySelector("img")
-            remel(pic)
+            // let pic = elem.querySelector("img")
+            remel(buttonc)
             moveel(buttonn, buttonp, i);
         });
     }
 
-        function addel(atrib) {
+    for (let i=0; i < tablicazdj.length; i++) {
+        tablicazdj[i].addEventListener("mouseover", function () {
+            let attrr = this.firstElementChild
+            console.log(attrr)
+
+        });
+    }
+
+    function addel(atrib) {
             const toadd = document.createElement("div");
             toadd.className = "fullScreen"
             main.appendChild(toadd);
@@ -38,10 +46,11 @@ document.addEventListener("DOMContentLoaded", function(){
             toadd3.classList.add("fas");
             toadd3.classList.add("fa-arrow-circle-right");
             toadd.appendChild(toadd3);
-            const toadd2 = document.createElement("button");
+            const toadd2 = document.createElement("i");
             toadd2.classList.add("close")
-            toadd2.innerText = "close"
-            toadd1.appendChild(toadd2);
+            toadd2.classList.add("fas");
+            toadd2.classList.add("fa-times-circle");
+            toadd.appendChild(toadd2);
             return toadd;
         }
 

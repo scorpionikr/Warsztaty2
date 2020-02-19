@@ -12,19 +12,17 @@
        buttonadd.addEventListener("click", function(){
                 let string = toaddin.value;
                 if (string.length >= 5 ) {
-                    add(string);
+                    let newelem = add(string);
+                    // console.log(newelem)
                     toaddin.value = " ";
+                    let buttonrem = newelem.childNodes[1]
+                    let buttoncomp = newelem.childNodes[2]
+                    remove(buttonrem);
+                    complete(buttoncomp);
+                    finished(buttonfin);
                 } else {
-                    alert ("Tekst ma mniej niz 5 znakow. Nie moge wprowadzic!")
+                    alert("Tekst ma mniej niz 5 znakow. Nie moge wprowadzic!")
                 }
-
-                 for (let i = 0; i <tasklists.length; i++) {
-                     let buttonrem = tasklists[i].childNodes[1]
-                     let buttoncomp = tasklists[i].childNodes[2]
-                     remove(buttonrem);
-                     complete(buttoncomp);
-                     finished(buttonfin);
-                 }
             });
 
         function add (toadded) {
@@ -46,7 +44,8 @@
             }
             if (tasklists.length % 2 !=0) {
                 toadd.style.backgroundColor = "lightgrey";
-             }
+            }
+            return toadd;
         }
 
         function remove (button) {
